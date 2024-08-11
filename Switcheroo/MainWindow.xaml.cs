@@ -124,11 +124,17 @@ namespace Switcheroo
                 }
                 else if (args.SystemKey == Key.LeftAlt && !Keyboard.Modifiers.HasFlag(ModifierKeys.Control))
                 {
-                    Switch();
+                    if (_altTabAutoSwitch)
+                    {
+                        Switch();
+                    }
                 }
-                else if (args.Key == Key.LeftAlt && _altTabAutoSwitch)
+                else if (args.Key == Key.LeftAlt)
                 {
-                    Switch();
+                    if (_altTabAutoSwitch)
+                    {
+                        Switch();
+                    }
                 }
             };
         }
